@@ -1,0 +1,19 @@
+# Local / build
+server.log
+server.err
+_serve.bat
+
+# Design/planning notes kept on disk but not published
+DESIGN.md
+PRODUCT.md
+.impeccable/
+
+# The site ships WebP only. Commons originals stay on disk but are never pushed.
+images/*.jpg
+images/*.jpeg
+images/*.png
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini

@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>BABYMONSTER — open the case</title>
+<meta name="description" content="An unofficial BABYMONSTER profile hub, built as the album package you never got to open: a booklet of seven members, a disc of every release, liner notes, and the back cover.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e12229'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%230e0c0d'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23f2ede3'/%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="fonts/blackhansans-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-latin.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#booklet">Skip to the booklet</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></symbol>
+  <symbol id="i-arrow-d" viewBox="0 0 24 24"><path d="M12 5v14m0 0 6-6m-6 6-6-6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4l12-7.2z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8.5 4.5v15M15.5 4.5v15"/></symbol>
+  <symbol id="i-sticker" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 0-8 8c1 0 5-1 7.3-3.3C21 14.9 20 13 20 12Z"/><path d="M12 20c0-3.6.4-5.6 1.7-6.9C15 11.8 17 12 20 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5 10 18 19.5 6.5"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14v5.5H4.5V6H10"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5c.8 4.3 1.9 5.4 6.2 6.2-4.3.8-5.4 1.9-6.2 6.2-.8-4.3-1.9-5.4-6.2-6.2 4.3-.8 5.4-1.9 6.2-6.2Z"/><path d="M18.5 15.5c.3 1.6.7 2 2.3 2.3-1.6.3-2 .7-2.3 2.3-.3-1.6-.7-2-2.3-2.3 1.6-.3 2-.7 2.3-2.3Z"/></symbol>
+  <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/></symbol>
+</svg>
+
+<header class="spine" id="top">
+  <a class="spine__mark" href="#cover">
+    <span class="spine__mark-word">BABYMONSTER</span>
+    <span class="spine__mark-code">MONSTIEZ EDITION</span>
+  </a>
+  <nav class="spine__nav" aria-label="The package">
+    <a href="#booklet">Booklet</a>
+    <a href="#disc">Disc</a>
+    <a href="#liner">Liner notes</a>
+    <a href="#back">Back cover</a>
+    <a href="#stickers">Stickers</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ══ FRONT COVER ══ -->
+  <section class="cover" id="cover" aria-labelledby="cover-h">
+    <h1 class="sr-only" id="cover-h">BABYMONSTER — an album package you can open</h1>
+
+    <div class="cover__stage">
+      <canvas class="cover__gl" id="gl" aria-hidden="true"></canvas>
+      <div class="cover__fallback" id="fallback" aria-hidden="true">
+        <div class="flatcase">
+          <div class="flatcase__lid">
+            <span class="flatcase__word">BABYMONSTER</span>
+            <span class="flatcase__sub">MONSTIEZ EDITION</span>
+            <span class="flatcase__hype">7 MONSTERS INSIDE</span>
+          </div>
+          <div class="flatcase__disc"><span>BABYMONSTER</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover__ui">
+      <div class="cover__actions">
+        <button class="btn btn--open" id="openCase" type="button">
+          <svg class="i" aria-hidden="true"><use href="#i-disc"/></svg>
+          <span class="btn__label">Open the case</span>
+        </button>
+        <p class="cover__hint mono" id="coverHint">Drag the case to turn it. Press open to let the disc out.</p>
+      </div>
+      <p class="cover__strip mono" aria-hidden="true">YG ENTERTAINMENT<span>·</span>DEBUT 2024.04.01<span>·</span>7 MEMBERS<span>·</span>MONSTIEZ<span>·</span>RED &amp; BLACK</p>
+    </div>
+
+    <a class="cover__down" href="#booklet" aria-label="Down to the booklet">
+      <svg class="i" aria-hidden="true"><use href="#i-arrow-d"/></svg>
+    </a>
+  </section>
+
+  <!-- ══ BOOKLET ══ -->
+  <section class="booklet" id="booklet" aria-labelledby="booklet-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="booklet-h">Seven members, seven pages.</h2>
+        <p class="sec-head__lead">The booklet is the reason you bought it. One page each, in the order the photocards fall out of the sleeve. Turn the pages with the arrows, the rail, or your own arrow keys.</p>
+      </header>
+
+      <div class="booklet__bar">
+        <p class="booklet__count mono" id="pageCount" aria-live="polite">Page 1 of 7</p>
+        <button class="btn btn--pull" id="pullBtn" type="button">
+          <svg class="i" aria-hidden="true"><use href="#i-sparkle"/></svg>
+          <span class="btn__label">Pull a photocard</span>
+        </button>
+      </div>
+
+      <div class="booklet__stage" id="bookletStage">
+        <div class="booklet__pages" id="bookletPages">
+
+          <article class="page is-current" data-member="ruka" style="--ground:#1F5C3A;--on-ground:#f2ede3;--chip:#8fd6ae" tabindex="-1">
+            <div class="page__photo">
+              <figure class="sleeve">
+                <img src="images/opt/ruka.webp" width="1400" height="1960" alt="Ruka at Kuala Lumpur International Airport, June 2025" loading="lazy" decoding="async">
+                <figcaption class="sleeve__tag mono">PC 01 · RUKA</figcaption>
+              </figure>
+            </div>
+            <div class="page__body">
+              <h3 class="page__name">Ruka</h3>
+              <p class="page__real mono">Kawai Ruka · Japan</p>
+              <p class="page__role">Main dancer and main rapper, and the one who arrived having already survived a survival show. Ruka sets the tempo the rest of the group lands on.</p>
+              <dl class="facts">
+                <div><dt>Born</dt><dd>2002.03.20</dd></div>
+                <div><dt>Position</dt><dd>Main dancer · Main rapper</dd></div>
+                <div><dt>Nationality</dt><dd>Japanese</dd></div>
+                <div><dt>MBTI</dt><dd>ISTJ</dd></div>
+                <div><dt>Height</dt><dd>158 cm</dd></div>
+                <div><dt>Colour</dt><dd><span class="chip" style="--c:#1F5C3A"></span>Forest green</dd></div>
+                <div><dt>Emoji</dt><dd>🦥</dd></div>
+              </dl>
+              <p class="page__sticker mono">Sticker on this page: “Runs the count. Do not interrupt.”</p>
+            </div>
+          </article>
+
+          <article class="page" data-member="pharita" style="--ground:#E8456B;--on-ground:#fff5f7;--chip:#ffc2d0" tabindex="-1">
+            <div class="page__photo">
+              <figure class="sleeve">
+                <img src="images/opt/pharita.webp" width="1280" height="1792" alt="Pharita on stage at Summer Sonic 2026" loading="lazy" decoding="async">
+                <figcaption class="sleeve__tag mono">PC 02 · PHARITA</figcaption>
+              </figure>
+            </div>
+            <div class="page__body">
+              <h3 class="page__name">Pharita</h3>
+              <p class="page__real mono">Pharita Chaikong · Thailand</p>
+              <p class="page__role">A vocalist with a warm, wide middle register and a talent for sounding calm exactly when the song is about to get loud. Pharita is the group's soft landing.</p>
+              <dl class="facts">
+                <div><dt>Born</dt><dd>2005.08.26</dd></div>
+                <div><dt>Position</dt><dd>Vocalist</dd></div>
+                <div><dt>Nationality</dt><dd>Thai</dd></div>
+                <div><dt>MBTI</dt><dd>INTP</dd></div>
+                <div><dt>Height</dt><dd>167 cm</dd></div>
+                <div><dt>Colour</dt><dd><span class="chip" style="--c:#E8456B"></span>Red-pink</dd></div>
+                <div><dt>Emoji</dt><dd>🦌</dd></div>
+              </dl>
+              <p class="page__sticker mono">Sticker on this page: “Harmonies provided. Blame the chorus.”</p>
+            </div>
+          </article>
+
+          <article class="page" data-member="asa" style="--ground:#7A4FBF;--on-ground:#f6f1ff;--chip:#cbb6f5" tabindex="-1">
+            <div class="page__photo">
+              <figure class="sleeve">
+                <img src="images/opt/asa.webp" width="1280" height="922" alt="Asa in a promotional frame for a Banila Co campaign" loading="lazy" decoding="async">
+                <figcaption class="sleeve__tag mono">PC 03 · ASA</figcaption>
+              </figure>
+            </div>
+            <div class="page__body">
+              <h3 class="page__name">Asa</h3>
+              <p class="page__real mono">Enami Asa · Japan</p>
+              <p class="page__role">Main rapper who writes, and who raps like she is reading you the receipt. Asa also sings and dances, which is the kind of thing this group treats as normal.</p>
+              <dl class="facts">
+                <div><dt>Born</dt><dd>2006.04.17</dd></div>
+                <div><dt>Position</dt><dd>Main rapper · Vocalist · Dancer</dd></div>
+                <div><dt>Nationality</dt><dd>Japanese</dd></div>
+                <div><dt>MBTI</dt><dd>ENFP</dd></div>
+                <div><dt>Height</dt><dd>161 cm</dd></div>
+                <div><dt>Colour</dt><dd><span class="chip" style="--c:#7A4FBF"></span>Verve violet</dd></div>
+                <div><dt>Emoji</dt><dd>🐰</dd></div>
+              </dl>
+              <p class="page__sticker mono">Sticker on this page: “Wrote the verse. You are welcome.”</p>
+            </div>
+          </article>
+
+          <article class="page" data-member="ahyeon" style="--ground:#F2681C;--on-ground:#1a0d04;--chip:#ffd7b8" tabindex="-1">
+            <div class="page__photo">
+              <figure class="sleeve">
+                <img src="images/opt/ahyeon.webp" width="1400" height="2488" alt="Ahyeon on stage in Manila, September 2026" loading="lazy" decoding="async">
+                <figcaption class="sleeve__tag mono">PC 04 · AHYEON</figcaption>
+              </figure>
+            </div>
+            <div class="page__body">
+              <h3 class="page__name">Ahyeon</h3>
+              <p class="page__real mono">Jung Ahyeon · Korea</p>
+              <p class="page__role">Main vocalist, rapper, dancer, visual, centre — the whole job description in one line, and she keeps hitting the note that ends the argument.</p>
+              <dl class="facts">
+                <div><dt>Born</dt><dd>2007.04.11</dd></div>
+                <div><dt>Position</dt><dd>Main vocalist · Rapper · Dancer · Visual · Centre</dd></div>
+                <div><dt>Nationality</dt><dd>Korean</dd></div>
+                <div><dt>MBTI</dt><dd>ISTJ</dd></div>
+                <div><dt>Height</dt><dd>163 cm</dd></div>
+                <div><dt>Colour</dt><dd><span class="chip" style="--c:#F2681C"></span>Bright orange</dd></div>
+                <div><dt>Emoji</dt><dd>🦋</dd></div>
+              </dl>
+              <p class="page__sticker mono">Sticker on this page: “That high note voids your warranty.”</p>
+            </div>
+          </article>
+
+          <article class="page page--empty" data-member="rami" style="--ground:#3FA9E0;--on-ground:#04202e;--chip:#bfe6fb" tabindex="-1">
+            <div class="page__photo">
+              <figure class="sleeve sleeve--empty">
+                <div class="sleeve__void" aria-hidden="true">
+                  <svg class="i i--lg" aria-hidden="true"><use href="#i-sticker"/></svg>
+                </div>
+                <figcaption class="sleeve__tag mono">PC 05 · RAMI · EMPTY SLEEVE</figcaption>
+              </figure>
+            </div>
+            <div class="page__body">
+              <h3 class="page__name">Rami</h3>
+              <p class="page__real mono">Shin Haram · Korea</p>
+              <p class="page__role">Main vocalist. Rami has been on an indefinite health hiatus since 9 May 2025, so this sleeve ships empty: no free-licensed photograph of her exists on Wikimedia Commons, and we would rather show you an empty sleeve than borrow someone else's face.</p>
+              <dl class="facts">
+                <div><dt>Born</dt><dd>2007.10.17</dd></div>
+                <div><dt>Position</dt><dd>Main vocalist</dd></div>
+                <div><dt>Nationality</dt><dd>Korean</dd></div>
+                <div><dt>MBTI</dt><dd>ISFJ</dd></div>
+                <div><dt>Height</dt><dd>—</dd></div>
+                <div><dt>Colour</dt><dd><span class="chip" style="--c:#3FA9E0"></span>Sky blue</dd></div>
+                <div><dt>Emoji</dt><dd>🐬</dd></div>
+              </dl>
+              <p class="page__sticker mono">Sticker on this page: “Rest first. We will keep the light on.”</p>
+            </div>
+          </article>
+
+          <article class="page" data-member="rora" style="--ground:#E8C21C;--on-ground:#1a1403;--chip:#fff2ad" tabindex="-1">
+            <div class="page__photo">
+              <figure class="sleeve">
+                <img src="images/opt/rora.webp" width="1400" height="2488" alt="Rora on stage in Manila, September 2026" loading="lazy" decoding="async">
+                <figcaption class="sleeve__tag mono">PC 06 · RORA</figcaption>
+              </figure>
+            </div>
+            <div class="page__body">
+              <h3 class="page__name">Rora</h3>
+              <p class="page__real mono">Lee Dain · Korea</p>
+              <p class="page__role">Lead vocalist and visual, and the group's resident instigator. Rora is the reason the interview clip you did not expect to watch is twelve minutes long.</p>
+              <dl class="facts">
+                <div><dt>Born</dt><dd>2008.08.14</dd></div>
+                <div><dt>Position</dt><dd>Lead vocalist · Visual</dd></div>
+                <div><dt>Nationality</dt><dd>Korean</dd></div>
+                <div><dt>MBTI</dt><dd>ENTP</dd></div>
+                <div><dt>Height</dt><dd>167 cm</dd></div>
+                <div><dt>Colour</dt><dd><span class="chip" style="--c:#E8C21C"></span>Lemon yellow</dd></div>
+                <div><dt>Emoji</dt><dd>🐼</dd></div>
+              </dl>
+              <p class="page__sticker mono">Sticker on this page: “Started the chaos. Stayed for it.”</p>
+            </div>
+          </article>
+
+          <article class="page" data-member="chiquita" style="--ground:#D6198C;--on-ground:#fff0f9;--chip:#ffb9e0" tabindex="-1">
+            <div class="page__photo">
+              <figure class="sleeve">
+                <img src="images/opt/chiquita.webp" width="1400" height="1960" alt="Chiquita at Kuala Lumpur International Airport, June 2025" loading="lazy" decoding="async">
+                <figcaption class="sleeve__tag mono">PC 07 · CHIQUITA</figcaption>
+              </figure>
+            </div>
+            <div class="page__body">
+              <h3 class="page__name">Chiquita</h3>
+              <p class="page__real mono">Riracha Phondechaphiphat · Thailand</p>
+              <p class="page__role">The maknae: vocalist, dancer, rapper, and the group's least supervised person on a live stream. Chiquita is younger than this website and performs like she knows it.</p>
+              <dl class="facts">
+                <div><dt>Born</dt><dd>2009.02.17</dd></div>
+                <div><dt>Position</dt><dd>Vocalist · Dancer · Rapper · Maknae</dd></div>
+                <div><dt>Nationality</dt><dd>Thai</dd></div>
+                <div><dt>MBTI</dt><dd>ISTP</dd></div>
+                <div><dt>Height</dt><dd>165 cm</dd></div>
+                <div><dt>Colour</dt><dd><span class="chip" style="--c:#D6198C"></span>Magenta-pink</dd></div>
+                <div><dt>Emoji</dt><dd>🐈‍⬛</dd></div>
+              </dl>
+              <p class="page__sticker mono">Sticker on this page: “Youngest. Loudest. Evidence pending.”</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="booklet__rail" role="tablist" aria-label="Booklet pages" id="bookletRail"></div>
+
+        <div class="booklet__nav">
+          <button class="btn btn--ghost" id="prevPage" type="button">
+            <svg class="i" aria-hidden="true"><use href="#i-arrow-l"/></svg><span class="btn__label">Back a page</span>
+          </button>
+          <p class="booklet__dots" id="bookletDots" aria-hidden="true"></p>
+          <button class="btn btn--ghost" id="nextPage" type="button">
+            <span class="btn__label">Next page</span><svg class="i" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+          </button>
+        </div>
+
+        <div class="pull" id="pull" hidden>
+          <div class="pull__card" id="pullCard"></div>
+          <p class="pull__line mono" id="pullLine"></p>
+          <button class="btn btn--ghost pull__close" type="button" id="pullClose">
+            <svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span class="btn__label">Put it back</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DISC ══ -->
+  <section class="disc" id="disc" aria-labelledby="disc-h">
+    <div class="wrap disc__grid">
+      <header class="sec-head sec-head--disc">
+        <h2 id="disc-h">Everything they pressed, on one disc.</h2>
+        <p class="sec-head__lead">Nine releases since the debut single. Pick a row and the disc takes the label. The light chases the row you are on, because a jewel case deserves at least one light.</p>
+      </header>
+
+      <div class="disc__player">
+        <div class="platter" id="platter">
+          <div class="platter__disc" id="platterDisc" aria-hidden="true"></div>
+          <div class="platter__label">
+            <span class="platter__title mono" id="discTitle">SUGAR HONEY ICE TEA</span>
+            <span class="platter__meta mono" id="discMeta">DIGITAL SINGLE</span>
+            <span class="platter__code mono">BABYMONSTER</span>
+          </div>
+          <div class="platter__hole" aria-hidden="true"></div>
+        </div>
+        <div class="platter__ctrl">
+          <button class="btn btn--play" id="spinBtn" type="button" aria-pressed="false">
+            <svg class="i" aria-hidden="true"><use href="#i-play"/></svg><span class="btn__label">Spin the disc</span>
+          </button>
+          <p class="mono platter__note">Sound is off by default. When you spin it, the browser plays a short synthesised tick — an interface sound we made, not the record.</p>
+        </div>
+        <div class="chase" id="chase" aria-hidden="true"></div>
+      </div>
+
+      <div class="disc__list">
+        <ol class="releases" id="releases">
+          <li class="release is-on" data-i="0" style="--ground:#E8456B">
+            <button type="button" aria-pressed="true" data-title="SUGAR HONEY ICE TEA" data-type="Digital single" data-date="2026.06.08" data-colour="#E8456B" data-note="The newest thing they have pressed. A digital single, so the disc spins lighter than the album it followed." data-tracks="[]">
+              <span class="r-no mono">01</span>
+              <span class="r-title">SUGAR HONEY ICE TEA</span>
+              <span class="r-type">Digital single</span>
+              <span class="r-date">2026.06.08</span>
+            </button>
+          </li>
+          <li class="release" data-i="1" style="--ground:#F2681C">
+            <button type="button" aria-pressed="false" data-title="춤 (CHOOM)" data-type="3rd mini album" data-date="2026.05.04" data-colour="#F2681C" data-note="Third mini album, and the release that named the world tour that opened in Seoul in June 2026." data-tracks="[]">
+              <span class="r-no mono">02</span>
+              <span class="r-title">춤 (CHOOM)</span>
+              <span class="r-type">3rd mini album</span>
+              <span class="r-date">2026.05.04</span>
+            </button>
+          </li>
+          <li class="release" data-i="2" style="--ground:#3FA9E0">
+            <button type="button" aria-pressed="false" data-title="WE GO UP" data-type="2nd mini album" data-date="2025.10.10" data-colour="#3FA9E0" data-note="Second mini album, arriving the week the Hello Monsters tour closed its first leg." data-tracks="[]">
+              <span class="r-no mono">03</span>
+              <span class="r-title">WE GO UP</span>
+              <span class="r-type">2nd mini album</span>
+              <span class="r-date">2025.10.10</span>
+            </button>
+          </li>
+          <li class="release" data-i="3" style="--ground:#e12229">
+            <button type="button" aria-pressed="false" data-title="HOT SAUCE" data-type="Digital single" data-date="2025.07.01" data-colour="#e12229" data-note="Released by six members while Rami was on hiatus. The gap in the harmony is audible and deliberate." data-tracks="[]">
+              <span class="r-no mono">04</span>
+              <span class="r-title">HOT SAUCE</span>
+              <span class="r-type">Digital single</span>
+              <span class="r-date">2025.07.01</span>
+            </button>
+          </li>
+          <li class="release" data-i="4" style="--ground:#7A4FBF">
+            <button type="button" aria-pressed="false" data-title="DRIP" data-type="1st full album" data-date="2024.11.01" data-colour="#7A4FBF" data-note="The first full album. More than a million copies sold at home, and the group&#x27;s first entry on the Billboard 200, at number 149." data-tracks="[&quot;CLIK CLAK&quot;, &quot;DRIP&quot;, &quot;Love Maybe&quot;, &quot;Really Like You&quot;, &quot;BILLIONAIRE&quot;, &quot;Love In My Heart&quot;, &quot;Woke Up In Tokyo (RUKA &amp; ASA)&quot;, &quot;FOREVER&quot;, &quot;BATTER UP (Remix)&quot;]">
+              <span class="r-no mono">05</span>
+              <span class="r-title">DRIP</span>
+              <span class="r-type">1st full album</span>
+              <span class="r-date">2024.11.01</span>
+            </button>
+          </li>
+          <li class="release" data-i="5" style="--ground:#D6198C">
+            <button type="button" aria-pressed="false" data-title="FOREVER" data-type="Digital single" data-date="2024.07.01" data-colour="#D6198C" data-note="A summer single that turned out to be the last before the full album." data-tracks="[]">
+              <span class="r-no mono">06</span>
+              <span class="r-title">FOREVER</span>
+              <span class="r-type">Digital single</span>
+              <span class="r-date">2024.07.01</span>
+            </button>
+          </li>
+          <li class="release" data-i="6" style="--ground:#E8C21C">
+            <button type="button" aria-pressed="false" data-title="BABYMONS7ER" data-type="1st mini album" data-date="2024.04.01" data-colour="#E8C21C" data-note="The debut mini album, led by SHEESH, and the first time all seven names were on one sleeve. SHEESH became their first top-ten entry on the Circle Digital Chart." data-tracks="[&quot;SHEESH&quot;]">
+              <span class="r-no mono">07</span>
+              <span class="r-title">BABYMONS7ER</span>
+              <span class="r-type">1st mini album</span>
+              <span class="r-date">2024.04.01</span>
+            </button>
+          </li>
+          <li class="release" data-i="7" style="--ground:#1F5C3A">
+            <button type="button" aria-pressed="false" data-title="Stuck In The Middle" data-type="Pre-release single" data-date="2024.02.01" data-colour="#1F5C3A" data-note="A quiet pre-release, two months before the debut, that showed the voices before the volume." data-tracks="[]">
+              <span class="r-no mono">08</span>
+              <span class="r-title">Stuck In The Middle</span>
+              <span class="r-type">Pre-release single</span>
+              <span class="r-date">2024.02.01</span>
+            </button>
+          </li>
+          <li class="release" data-i="8" style="--ground:#dfe4ee">
+            <button type="button" aria-pressed="false" data-title="BATTER UP" data-type="Debut digital single" data-date="2023.11.27" data-colour="#dfe4ee" data-note="The debut single. Its music video drew 22.59 million views in its first 24 hours, then a record for a K-pop debut." data-tracks="[]">
+              <span class="r-no mono">09</span>
+              <span class="r-title">BATTER UP</span>
+              <span class="r-type">Debut digital single</span>
+              <span class="r-date">2023.11.27</span>
+            </button>
+          </li>
+        </ol>
+        <div class="release-detail" id="releaseDetail" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LINER NOTES ══ -->
+  <section class="liner" id="liner" aria-labelledby="liner-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 id="liner-h">Liner notes, folded into the case.</h2>
+        <p class="sec-head__lead">The insert nobody reads until the second listen: how a seven-member group from four cities went from a debut single to a stadium in fourteen months.</p>
+      </header>
+      <ol class="notes" id="notes">
+        <li><span class="n-date mono">2023.11.27</span><span class="n-body"><b>BATTER UP</b> is released as the debut digital single, before the group has a name people can spell. The video sets a record for a K-pop debut with 22.59 million views in a day.</span></li>
+        <li><span class="n-date mono">2024.02.01</span><span class="n-body"><b>Stuck In The Middle</b> arrives as a pre-release, a deliberately quiet answer to a loud debut.</span></li>
+        <li><span class="n-date mono">2024.04.01</span><span class="n-body">Debut. <b>BABYMONS7ER</b>, the first mini album, lands with SHEESH as its title track — the first of the group's top-ten entries on Korea's Circle Digital Chart.</span></li>
+        <li><span class="n-date mono">2024.07.01</span><span class="n-body"><b>FOREVER</b>, a digital single, keeps the release cadence at one per quarter.</span></li>
+        <li><span class="n-date mono">2024.11.01</span><span class="n-body"><b>DRIP</b>, the first full album, sells more than a million copies domestically and puts the group on the Billboard 200 at number 149.</span></li>
+        <li><span class="n-date mono">2025.01</span><span class="n-body">The <b>Hello Monsters</b> world tour opens. It runs to September, playing 32 shows in 20 cities to around 300,000 people, and makes BABYMONSTER the fastest female act to headline KSPO Dome.</span></li>
+        <li><span class="n-date mono">2025.05.09</span><span class="n-body"><b>Rami</b> begins an indefinite hiatus for her health. Releases continue with six members.</span></li>
+        <li><span class="n-date mono">2025.07.01</span><span class="n-body"><b>HOT SAUCE</b> is released by six members, the first single without Rami's voice on it.</span></li>
+        <li><span class="n-date mono">2025.10.10</span><span class="n-body"><b>WE GO UP</b>, the second mini album, arrives as the tour's first leg closes.</span></li>
+        <li><span class="n-date mono">2026.01.03</span><span class="n-body">The <b>Love Monsters</b> fan-con tour concludes, having played to roughly 140,000 people.</span></li>
+        <li><span class="n-date mono">2026.05.04</span><span class="n-body"><b>춤 (CHOOM)</b>, the third mini album, lands with a title that is also the name of the next tour.</span></li>
+        <li><span class="n-date mono">2026.06.08</span><span class="n-body"><b>SUGAR HONEY ICE TEA</b> is released as a digital single.</span></li>
+        <li><span class="n-date mono">2026.06.26</span><span class="n-body">The <b>CHOOM</b> world tour opens in Seoul.</span></li>
+      </ol>
+      <p class="liner__foot mono">Timeline compiled from the official YG Entertainment artist pages and Wikipedia. Tour figures are the reported totals.</p>
+    </div>
+  </section>
+
+  <!-- ══ BACK COVER ══ -->
+  <section class="back" id="back" aria-labelledby="back-h">
+    <div class="wrap back__grid">
+      <div class="back__main">
+        <h2 id="back-h">MONSTIEZ, and the fine print.</h2>
+        <p class="back__lead">The fandom is called MONSTIEZ. The colours are red and black. If you are reading this section, you are already one of them, which is the fastest any fan page has ever recruited.</p>
+
+        <div class="back__cols">
+          <div>
+            <h3 class="back__sub">Find them</h3>
+            <ul class="links">
+              <li><a href="https://www.instagram.com/babymonster_ygofficial/" rel="noopener">Instagram <span class="mono">@babymonster_ygofficial</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+              <li><a href="https://x.com/YGBABYMONSTER_" rel="noopener">X <span class="mono">@YGBABYMONSTER_</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+              <li><a href="https://www.tiktok.com/@babymonster_yg_tiktok" rel="noopener">TikTok <span class="mono">@babymonster_yg_tiktok</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+              <li><a href="https://www.youtube.com/@BABYMONSTER" rel="noopener">YouTube <span class="mono">@BABYMONSTER</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+              <li><a href="https://weverse.io/babymonster/feed" rel="noopener">Weverse <span class="mono">babymonster</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+              <li><a href="https://open.spotify.com/artist/1SIocsqdEefUTE6XKGUiVS" rel="noopener">Spotify <span class="mono">artist page</span><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="back__sub">Side effects</h3>
+            <ul class="effects">
+              <li>Humming for three to five business days.</li>
+              <li>Replaying the bridge at 2am. There is no cure.</li>
+              <li>Correcting people who say “Baby Monster”. Gently. Twice.</li>
+              <li>Owning more than one version of the same album.</li>
+              <li>Sudden loyalty to a colour you had no opinion about last year.</li>
+            </ul>
+            <p class="back__fine mono">If symptoms persist, you are a MONSTIEZ. Consult the disc.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="back__cover" aria-label="The back cover of the package">
+        <figure class="bcover">
+          <img src="images/opt/group-airport2.webp" width="1400" height="694" alt="BABYMONSTER photographed as a group in September 2024" loading="lazy" decoding="async">
+        </figure>
+        <div class="barcode" aria-hidden="true"></div>
+        <p class="bcover__mono mono">
+          BABYMONSTER<br>
+          BABYMONS7ER · 2024.04.01<br>
+          7 MEMBERS · 4 CITIES · 1 FANDOM<br>
+          MONSTIEZ · RED &amp; BLACK<br>
+          PLAY LOUD. THE NEIGHBOURS WILL UNDERSTAND.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ══ STICKER SHEET ══ -->
+  <section class="stickers" id="stickers" aria-labelledby="stickers-h">
+    <div class="wrap stickers__grid">
+      <header class="sec-head">
+        <h2 id="stickers-h">The sticker sheet.</h2>
+        <p class="sec-head__lead">Every album ships with stickers you are supposed to put on your laptop and never do. Peel one onto the case instead. It sticks to the front cover, and it stays there for the rest of your visit.</p>
+      </header>
+
+      <div class="sheet" id="sheet" role="group" aria-label="Sticker sheet">
+        <button class="stk" type="button" data-sticker="0" data-text="7 MONSTERS" data-shape="round" style="--sc:#e12229;--on-ground:#ffffff" aria-pressed="false"><span>7 MONSTERS</span></button>
+        <button class="stk" type="button" data-sticker="1" data-text="NO SKIPS" data-shape="round" style="--sc:#E8C21C;--on-ground:#0d0a07" aria-pressed="false"><span>NO SKIPS</span></button>
+        <button class="stk" type="button" data-sticker="2" data-text="STAN LOUD" data-shape="rect" style="--sc:#3FA9E0;--on-ground:#0d0a07" aria-pressed="false"><span>STAN LOUD</span></button>
+        <button class="stk" type="button" data-sticker="3" data-text="MONSTIEZ" data-shape="rect" style="--sc:#D6198C;--on-ground:#ffffff" aria-pressed="false"><span>MONSTIEZ</span></button>
+        <button class="stk" type="button" data-sticker="4" data-text="REST FIRST" data-shape="round" style="--sc:#7A4FBF;--on-ground:#ffffff" aria-pressed="false"><span>REST FIRST</span></button>
+        <button class="stk" type="button" data-sticker="5" data-text="VOL. 7" data-shape="round" style="--sc:#F2681C;--on-ground:#0d0a07" aria-pressed="false"><span>VOL. 7</span></button>
+        <button class="stk" type="button" data-sticker="6" data-text="EARS FIRST" data-shape="rect" style="--sc:#1F5C3A;--on-ground:#ffffff" aria-pressed="false"><span>EARS FIRST</span></button>
+        <button class="stk" type="button" data-sticker="7" data-text="BABY, MONSTER" data-shape="rect" style="--sc:#E8456B;--on-ground:#0d0a07" aria-pressed="false"><span>BABY, MONSTER</span></button>
+      </div>
+
+      <div class="stickers__side">
+        <div class="minicase" id="minicase" aria-hidden="true">
+          <div class="minicase__lid">
+            <span class="minicase__word">BABYMONSTER</span>
+            <div class="minicase__stuck" id="minicaseStuck"></div>
+          </div>
+        </div>
+        <p class="mono stickers__count" id="stickerCount" aria-live="polite">0 of 8 stuck</p>
+        <button class="btn btn--ink" id="clearStickers" type="button">
+          <svg class="i" aria-hidden="true"><use href="#i-x"/></svg><span class="btn__label">Peel them all off</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="wrap">
+    <p class="colophon__word">BABYMONSTER</p>
+    <div class="colophon__cols">
+      <div>
+        <p class="colophon__h">Photographs</p>
+        <p>All photographs are freely licensed and come from Wikimedia Commons. Each is credited to its author below and in <span class="mono">images/CREDITS.md</span>.</p>
+        <ul class="credits" id="credits">
+          <li><a href="https://commons.wikimedia.org/wiki/File:Babymonster_at_Incheon_Airport.jpg" rel="noopener">Babymonster at Incheon Airport</a> — K-POPIT 케이팝잇 · CC BY 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:BABYMONSTER_in_Seattle.jpg" rel="noopener">BABYMONSTER in Seattle</a> — David Lee · CC BY 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Babymonster_Seattle.jpg" rel="noopener">Babymonster Seattle</a> — David Lee · CC BY 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Babymonster_with_Doosan_Bear_Players_for_Adidas.png" rel="noopener">Babymonster with Doosan Bear Players for Adidas</a> — BEARS TV · CC BY 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Babymonster_Sep%2724.png" rel="noopener">Babymonster Sep&#x27;24</a> — 티비텐 · CC BY 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Ahyeon_20260905_Manila.jpg" rel="noopener">Ahyeon 20260905 Manila</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Ahyeon_Summer_Sonic_2026.jpg" rel="noopener">Ahyeon Summer Sonic 2026</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Chiquita_at_KLIA_20-06-2025.jpg" rel="noopener">Chiquita at KLIA 20-06-2025</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Pharita_Summer_Sonic_2026.jpg" rel="noopener">Pharita Summer Sonic 2026</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Ruka_at_KLIA_20-06-2025.jpg" rel="noopener">Ruka at KLIA 20-06-2025</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Ruka_and_Chiquita_20-06-2025.jpg" rel="noopener">Ruka and Chiquita 20-06-2025</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Rora_20260905_Manila.jpg" rel="noopener">Rora 20260905 Manila</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Rora_Summer_Sonic_2026.jpg" rel="noopener">Rora Summer Sonic 2026</a> — Farouk Azim · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:BABYMONSTER_ASA_BANILA_CO.png" rel="noopener">BABYMONSTER ASA BANILA CO</a> — 티비텐 · CC BY-SA 3.0</li>
+        </ul>
+      </div>
+      <div>
+        <p class="colophon__h">This page</p>
+        <p>An unofficial fan page built as a static site: hand-written HTML, CSS and JavaScript, a Three.js jewel case from a CDN, and self-hosted type. No trackers, no analytics, nothing loaded from a third party except the 3D library.</p>
+        <p>BABYMONSTER, MONSTIEZ and all release titles belong to YG Entertainment. Not affiliated, not endorsed, made with affection and a small amount of nerve.</p>
+        <p class="mono colophon__note">Rami's page is an empty sleeve on purpose. See <span>images/CREDITS.md</span>.</p>
+      </div>
+    </div>
+    <p class="colophon__back"><a href="#cover">Back to the cover</a> · <span class="mono">CASE CLOSED</span></p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/case3d.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
