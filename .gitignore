@@ -13,6 +13,9 @@ images/*.jpg
 images/*.jpeg
 images/*.png
 
+# Raw UHD Paper downloads (~170 MB). Kept locally as source; never pushed.
+images/uhdpaper/
+
 # OS
 Thumbs.db
 .DS_Store

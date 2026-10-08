@@ -1,47 +1,111 @@
 # Image credits
 
-Every photograph used on this site is freely licensed and comes from Wikimedia Commons.
-The site ships optimized WebP derivatives in `images/opt/`; each derivative is a
-downscaled copy of the Commons original listed below. No image is cropped in a way that
-changes its meaning, and none is mirrored.
+Every photograph used on this site was downloaded from the **UHD Paper** wallpaper
+gallery (a 4K wallpaper site) and cropped to the sleeve format for display. The site
+ships optimized WebP derivatives in `images/opt/`; the untouched downloads are kept in
+`images/uhdpaper/`.
 
-| File used in site | Commons original | Author | Licence |
-| --- | --- | --- | --- |
-| `group-incheon.webp` | [Babymonster at Incheon Airport.jpg](https://commons.wikimedia.org/wiki/File:Babymonster_at_Incheon_Airport.jpg) | K-POPIT 케이팝잇 | CC BY 3.0 |
-| `group-seattle.webp` | [BABYMONSTER in Seattle.jpg](https://commons.wikimedia.org/wiki/File:BABYMONSTER_in_Seattle.jpg) | David Lee | CC BY 4.0 |
-| `group-seattle2.webp` | [Babymonster Seattle.jpg](https://commons.wikimedia.org/wiki/File:Babymonster_Seattle.jpg) | David Lee | CC BY 4.0 |
-| `group-adidas.webp` | [Babymonster with Doosan Bear Players for Adidas.png](https://commons.wikimedia.org/wiki/File:Babymonster_with_Doosan_Bear_Players_for_Adidas.png) | BEARS TV | CC BY 3.0 |
-| `group-airport2.webp` | [Babymonster Sep'24.png](https://commons.wikimedia.org/wiki/File:Babymonster_Sep%2724.png) | 티비텐 | CC BY 3.0 |
-| `ahyeon.webp` | [Ahyeon 20260905 Manila.jpg](https://commons.wikimedia.org/wiki/File:Ahyeon_20260905_Manila.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `ahyeon2.webp` | [Ahyeon Summer Sonic 2026.jpg](https://commons.wikimedia.org/wiki/File:Ahyeon_Summer_Sonic_2026.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `chiquita.webp` | [Chiquita at KLIA 20-06-2025.jpg](https://commons.wikimedia.org/wiki/File:Chiquita_at_KLIA_20-06-2025.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `pharita.webp` | [Pharita Summer Sonic 2026.jpg](https://commons.wikimedia.org/wiki/File:Pharita_Summer_Sonic_2026.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `ruka.webp` | [Ruka at KLIA 20-06-2025.jpg](https://commons.wikimedia.org/wiki/File:Ruka_at_KLIA_20-06-2025.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `ruka-chiquita.webp` | [Ruka and Chiquita 20-06-2025.jpg](https://commons.wikimedia.org/wiki/File:Ruka_and_Chiquita_20-06-2025.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `rora.webp` | [Rora 20260905 Manila.jpg](https://commons.wikimedia.org/wiki/File:Rora_20260905_Manila.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `rora2.webp` | [Rora Summer Sonic 2026.jpg](https://commons.wikimedia.org/wiki/File:Rora_Summer_Sonic_2026.jpg) | Farouk Azim | CC BY-SA 4.0 |
-| `asa.webp` | [BABYMONSTER ASA BANILA CO.png](https://commons.wikimedia.org/wiki/File:BABYMONSTER_ASA_BANILA_CO.png) | 티비텐 | CC BY-SA 3.0 |
+- Source index: <https://www.uhdpaper.com/search?q=babymonster&by-date=true>
+- Downloaded: 2026-10-08 — 57 images × 5 resolutions each (207 files, ~172 MB).
+
+## Images used on the site
+
+| File used in site | Source image (UHD Paper) | Source page |
+| --- | --- | --- |
+| `ruka.webp` | `ruka-babymonster-moon-292@5@r` | <https://www.uhdpaper.com/2026/08/ruka-babymonster-moon-wallpaper-2925r.html> |
+| `pharita.webp` | `pharita-babymonster-we-go-up-visual-photo-390@5@k` | <https://www.uhdpaper.com/2025/11/pharita-babymonster-4k-wallpaper-3905k.html> |
+| `asa.webp` | `asa-babymonster-we-go-up-visual-photo-375@5@k` | <https://www.uhdpaper.com/2025/11/asa-babymonster-4k-wallpaper-3755k.html> |
+| `ahyeon.webp` | `ahyeon-babymonster-we-go-up-visual-photo-374@5@k` | <https://www.uhdpaper.com/2025/11/ahyeon-babymonster-4k-wallpaper-3745k.html> |
+| `rora.webp` | `rora-babymonster-moon-289@5@r` | <https://www.uhdpaper.com/2026/08/rora-babymonster-moon-wallpaper-2895r.html> |
+| `chiquita.webp` | `chiquita-babymonster-18@1@n` | <https://www.uhdpaper.com/2025/11/chiquita-babymonster-4k-3765k.html> |
+| `group.webp` | `babymonster-moon-all-members-285@5@r` | <https://www.uhdpaper.com/2026/08/babymonster-moon-all-wallpaper-2855r.html> |
+
+## How the derivatives were made
+
+- Member sleeves: cropped to 3:4 with the detected face positioned in the upper third,
+  then resized to 1200×1600 and saved as WebP (quality 85).
+- Back cover: cropped to 2:1 and resized to 1600×800 (WebP quality 86).
+
+## Full downloaded set (57 images)
+
+The complete set is in `images/uhdpaper/`. Each base name below ships in five
+resolutions — `-pc-4k` (3840×2160), `-pc-2k` (2560×1440), `-pc-hd` (1920×1080),
+`-phone-4k` (2160×3840), `-phone-hd` (1080×1920) — except the `choom` album thumbs,
+which ship as a single 399×224 thumbnail.
+
+### MOON concept (2026.08)
+
+- `ruka-babymonster-moon-292@5@r`
+- `pharita-babymonster-moon-286@5@r`
+- `asa-babymonster-moon-287@5@r`
+- `ahyeon-babymonster-moon-290@5@r`
+- `rora-babymonster-moon-289@5@r`
+- `chiquita-babymonster-moon-291@5@r`
+- `babymonster-moon-all-members-285@5@r`
+- `babymonster-moon-members-288@5@r`
+- `asa-babymonster-photo-919@5@r`
+
+### We Go Up (2025.11)
+
+- `ruka-babymonster-we-go-up-visual-photo-392@5@k`
+- `ruka-babymonster-we-go-up-day-ver-387@5@k`
+- `ruka-babymonster-we-go-up-night-ver-382@5@k`
+- `pharita-babymonster-we-go-up-visual-photo-390@5@k`
+- `pharita-babymonster-we-go-up-day-ver-386@5@k`
+- `pharita-babymonster-we-go-up-night-ver-381@5@k`
+- `asa-babymonster-we-go-up-visual-photo-375@5@k`
+- `asa-babymonster-we-go-up-day-ver-388@5@k`
+- `asa-babymonster-we-go-up-night-ver-380@5@k`
+- `ahyeon-babymonster-we-go-up-visual-photo-374@5@k`
+- `ahyeon-babymonster-we-go-up-day-ver-383@5@k`
+- `ahyeon-babymonster-we-go-up-night-ver-379@5@k`
+- `rora-babymonster-we-go-up-visual-photo-391@5@k`
+- `rora-babymonster-we-go-up-day-ver-384@5@k`
+- `rora-babymonster-we-go-up-night-ver-377@5@k`
+- `chiquita-babymonster-we-go-up-visual-photo-376@5@k`
+- `chiquita-babymonster-we-go-up-day-ver-385@5@k`
+- `chiquita-babymonster-we-go-up-night-ver-378@5@k`
+- `babymonster-all-members-we-go-up-389@5@k`
+
+### Earlier shoots
+
+- `babymonster-asa-15@1@n`
+- `babymonster-rora-19@1@n`
+- `babymonster-chiquita-17@1@n`
+- `ruka-babymonster-pubg-mobile-321@5@k`
+- `pharita-babymonster-pubg-mobile-318@5@k`
+- `asa-babymonster-pubg-mobile-314@5@k`
+- `ahyeon-babymonster-pubg-mobile-313@5@k`
+- `rora-babymonster-pubg-mobile-320@5@k`
+- `chiquita-babymonster-pubg-mobile-315@5@k`
+- `babymonster-pubg-mobile-316@5@k`
+- `babymonster-pubg-mobile-317@5@k`
+
+### CHOOM album (thumbnails)
+
+- `babymonster-choom-637@5@o-8k-thumb`
+- `babymonster-choom-638@5@o-4k-thumb`
+- `babymonster-choom-639@5@o-4k-thumb`
+- `chiquita-babymonster-choom-640@5@o-4k-thumb`
+- `chiquita-babymonster-choom-641@5@o-4k-thumb`
+- `pharita-babymonster-choom-642@5@o-4k-thumb`
+- `pharita-babymonster-choom-643@5@o-4k-thumb`
+- `rora-babymonster-choom-644@5@o-4k-thumb`
+- `rora-babymonster-choom-645@5@o-4k-thumb`
+- `ruka-babymonster-choom-646@5@o-4k-thumb`
+- `ruka-babymonster-choom-647@5@o-4k-thumb`
+- `ahyeon-babymonster-choom-633@5@o-4k-thumb`
+- `ahyeon-babymonster-choom-634@5@o-4k-thumb`
+- `asa-babymonster-choom-635@5@o-4k-thumb`
+- `asa-babymonster-choom-636@5@o-4k-thumb`
 
 ## Missing photograph, stated plainly
 
-**Rami has no freely licensed photograph on Wikimedia Commons.** She has been on an
-indefinite health hiatus since May 2025, and the only Commons files naming her are
-event photographs that do not show her clearly. Her page in the member booklet is
-therefore an empty photocard sleeve with her name, position and colour, drawn in CSS.
-It is labelled on the page as an empty sleeve, and no other member's photograph is used
-to fill it.
-
-## Notes on individual images
-
-- `group-adidas.webp` is a promotional frame from the group's Adidas appearance with the
-  Doosan Bears and includes people outside the group; it is used as a full-bleed scene,
-  not as a member portrait.
-- `asa.webp` is a brand promotional frame (Banila Co) rather than a clean portrait, so it
-  is used inside the booklet's sleeve frame at a smaller scale.
-- `group-incheon.webp` is the largest source on the site (8972×5261). Its WebP derivative
-  is scaled to 1400px wide, which is ample for its full-bleed use.
-- All derivatives were produced with ffmpeg at quality 4 (`-q:v 4`), scale
-  `min(1400, iw)`, preserving aspect ratio.
+**Rami has no clear solo photograph in this gallery.** She has been on an indefinite
+health hiatus since May 2025, and none of the collected images show her alone and
+clearly. Her page in the member booklet is therefore an empty photocard sleeve with her
+name, position and colour, drawn in CSS. It is labelled on the page as an empty sleeve,
+and no other member's photograph is used to fill it.
 
 ## Text and data sources
 
@@ -53,4 +117,6 @@ artist pages and Wikipedia:
 - <https://en.wikipedia.org/wiki/Babymonster>
 
 BABYMONSTER, MONSTIEZ and all release titles are the property of YG Entertainment. This
-is an unofficial fan page made for a portfolio exercise, with no affiliation.
+is an unofficial fan page made for a portfolio exercise, with no affiliation. The
+wallpapers were downloaded from UHD Paper, which in turn sources them from the group's
+official promotional material; rights remain with YG Entertainment and the photographers.

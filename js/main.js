@@ -170,7 +170,7 @@
       var m = members[k];
       var inner = "";
       if (m.photo) {
-        inner = '<figure><img src="' + m.photo + '" alt="' + (m.alt || m.name) + '" width="1280" height="1792" decoding="async"></figure>';
+        inner = '<figure><img src="' + m.photo + '" alt="' + (m.alt || m.name) + '" width="1200" height="1600" decoding="async"></figure>';
       } else {
         inner = '<figure><div class="void"><svg class="i i--lg" aria-hidden="true"><use href="#i-sticker"/></svg></div></figure>';
       }
