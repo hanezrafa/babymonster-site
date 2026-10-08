@@ -315,7 +315,7 @@
           <button class="btn btn--play" id="spinBtn" type="button" aria-pressed="false">
             <svg class="i" aria-hidden="true"><use href="#i-play"/></svg><span class="btn__label">Spin the disc</span>
           </button>
-          <p class="mono platter__note">Sound is off by default. When you spin it, the browser plays a short synthesised tick — an interface sound we made, not the record.</p>
+          <p class="mono platter__note" id="platterNote">Sound is off until you press play. What you hear is the 30-second preview Apple publishes for the release you picked, streamed from their CDN — no download, nothing starts on its own.</p>
         </div>
         <div class="chase" id="chase" aria-hidden="true"></div>
       </div>
@@ -323,7 +323,7 @@
       <div class="disc__list">
         <ol class="releases" id="releases">
           <li class="release is-on" data-i="0" style="--ground:#E8456B">
-            <button type="button" aria-pressed="true" data-title="SUGAR HONEY ICE TEA" data-type="Digital single" data-date="2026.06.08" data-colour="#E8456B" data-note="The newest thing they have pressed. A digital single, so the disc spins lighter than the album it followed." data-tracks="[]">
+            <button type="button" aria-pressed="true" data-title="SUGAR HONEY ICE TEA" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/98/13/37/981337d3-fa5e-af93-7277-1de3caec781e/mzaf_13235488098155291217.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/sugar-honey-ice-tea/6774417988?i=6774417990" data-type="Digital single" data-date="2026.06.08" data-colour="#E8456B" data-note="The newest thing they have pressed. A digital single, so the disc spins lighter than the album it followed." data-tracks="[]">
               <span class="r-no mono">01</span>
               <span class="r-title">SUGAR HONEY ICE TEA</span>
               <span class="r-type">Digital single</span>
@@ -331,7 +331,7 @@
             </button>
           </li>
           <li class="release" data-i="1" style="--ground:#F2681C">
-            <button type="button" aria-pressed="false" data-title="춤 (CHOOM)" data-type="3rd mini album" data-date="2026.05.04" data-colour="#F2681C" data-note="Third mini album, and the release that named the world tour that opened in Seoul in June 2026." data-tracks="[]">
+            <button type="button" aria-pressed="false" data-title="춤 (CHOOM)" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ac/e8/06/ace80652-c312-803f-5b16-96e0e3546a2e/mzaf_13740333053064240650.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/choom/1895588322?i=6763988598" data-type="3rd mini album" data-date="2026.05.04" data-colour="#F2681C" data-note="Third mini album, and the release that named the world tour that opened in Seoul in June 2026." data-tracks="[]">
               <span class="r-no mono">02</span>
               <span class="r-title">춤 (CHOOM)</span>
               <span class="r-type">3rd mini album</span>
@@ -339,7 +339,7 @@
             </button>
           </li>
           <li class="release" data-i="2" style="--ground:#3FA9E0">
-            <button type="button" aria-pressed="false" data-title="WE GO UP" data-type="2nd mini album" data-date="2025.10.10" data-colour="#3FA9E0" data-note="Second mini album, arriving the week the Hello Monsters tour closed its first leg." data-tracks="[]">
+            <button type="button" aria-pressed="false" data-title="WE GO UP" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/33/d1/5c/33d15cbb-f091-a17b-68eb-cf8b0da0ef93/mzaf_14472943631386234232.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/we-go-up/1843247940?i=1843247941" data-type="2nd mini album" data-date="2025.10.10" data-colour="#3FA9E0" data-note="Second mini album, arriving the week the Hello Monsters tour closed its first leg." data-tracks="[]">
               <span class="r-no mono">03</span>
               <span class="r-title">WE GO UP</span>
               <span class="r-type">2nd mini album</span>
@@ -347,7 +347,7 @@
             </button>
           </li>
           <li class="release" data-i="3" style="--ground:#e12229">
-            <button type="button" aria-pressed="false" data-title="HOT SAUCE" data-type="Digital single" data-date="2025.07.01" data-colour="#e12229" data-note="Released by six members while Rami was on hiatus. The gap in the harmony is audible and deliberate." data-tracks="[]">
+            <button type="button" aria-pressed="false" data-title="HOT SAUCE" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3e/1d/15/3e1d154d-c5e0-ca1f-b0c3-e7773476e788/mzaf_15587592432920319333.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/hot-sauce/1822714115?i=1822714116" data-type="Digital single" data-date="2025.07.01" data-colour="#e12229" data-note="Released by six members while Rami was on hiatus. The gap in the harmony is audible and deliberate." data-tracks="[]">
               <span class="r-no mono">04</span>
               <span class="r-title">HOT SAUCE</span>
               <span class="r-type">Digital single</span>
@@ -355,7 +355,7 @@
             </button>
           </li>
           <li class="release" data-i="4" style="--ground:#7A4FBF">
-            <button type="button" aria-pressed="false" data-title="DRIP" data-type="1st full album" data-date="2024.11.01" data-colour="#7A4FBF" data-note="The first full album. More than a million copies sold at home, and the group&#x27;s first entry on the Billboard 200, at number 149." data-tracks="[&quot;CLIK CLAK&quot;, &quot;DRIP&quot;, &quot;Love Maybe&quot;, &quot;Really Like You&quot;, &quot;BILLIONAIRE&quot;, &quot;Love In My Heart&quot;, &quot;Woke Up In Tokyo (RUKA &amp; ASA)&quot;, &quot;FOREVER&quot;, &quot;BATTER UP (Remix)&quot;]">
+            <button type="button" aria-pressed="false" data-title="DRIP" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/49/8d/11498d26-33f8-d33e-9641-0931f48c1530/mzaf_16154189721053536181.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/drip/1773262053?i=1773262055" data-type="1st full album" data-date="2024.11.01" data-colour="#7A4FBF" data-note="The first full album. More than a million copies sold at home, and the group&#x27;s first entry on the Billboard 200, at number 149." data-tracks="[&quot;CLIK CLAK&quot;, &quot;DRIP&quot;, &quot;Love Maybe&quot;, &quot;Really Like You&quot;, &quot;BILLIONAIRE&quot;, &quot;Love In My Heart&quot;, &quot;Woke Up In Tokyo (RUKA &amp; ASA)&quot;, &quot;FOREVER&quot;, &quot;BATTER UP (Remix)&quot;]">
               <span class="r-no mono">05</span>
               <span class="r-title">DRIP</span>
               <span class="r-type">1st full album</span>
@@ -363,7 +363,7 @@
             </button>
           </li>
           <li class="release" data-i="5" style="--ground:#D6198C">
-            <button type="button" aria-pressed="false" data-title="FOREVER" data-type="Digital single" data-date="2024.07.01" data-colour="#D6198C" data-note="A summer single that turned out to be the last before the full album." data-tracks="[]">
+            <button type="button" aria-pressed="false" data-title="FOREVER" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d0/17/25/d0172580-1524-824c-7807-4c9e732b9c9b/mzaf_10594737550835540871.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/forever/1753210714?i=1753210716" data-type="Digital single" data-date="2024.07.01" data-colour="#D6198C" data-note="A summer single that turned out to be the last before the full album." data-tracks="[]">
               <span class="r-no mono">06</span>
               <span class="r-title">FOREVER</span>
               <span class="r-type">Digital single</span>
@@ -371,7 +371,7 @@
             </button>
           </li>
           <li class="release" data-i="6" style="--ground:#E8C21C">
-            <button type="button" aria-pressed="false" data-title="BABYMONS7ER" data-type="1st mini album" data-date="2024.04.01" data-colour="#E8C21C" data-note="The debut mini album, led by SHEESH, and the first time all seven names were on one sleeve. SHEESH became their first top-ten entry on the Circle Digital Chart." data-tracks="[&quot;SHEESH&quot;]">
+            <button type="button" aria-pressed="false" data-title="BABYMONS7ER" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e8/0e/20/e80e2080-c1e6-f616-bec0-82fbd530da09/mzaf_402899695312688427.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/sheesh/1737962888?i=1737962890" data-type="1st mini album" data-date="2024.04.01" data-colour="#E8C21C" data-note="The debut mini album, led by SHEESH, and the first time all seven names were on one sleeve. SHEESH became their first top-ten entry on the Circle Digital Chart." data-tracks="[&quot;SHEESH&quot;]">
               <span class="r-no mono">07</span>
               <span class="r-title">BABYMONS7ER</span>
               <span class="r-type">1st mini album</span>
@@ -379,7 +379,7 @@
             </button>
           </li>
           <li class="release" data-i="7" style="--ground:#1F5C3A">
-            <button type="button" aria-pressed="false" data-title="Stuck In The Middle" data-type="Pre-release single" data-date="2024.02.01" data-colour="#1F5C3A" data-note="A quiet pre-release, two months before the debut, that showed the voices before the volume." data-tracks="[]">
+            <button type="button" aria-pressed="false" data-title="Stuck In The Middle" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/48/44/4c/48444cd9-aba2-0030-9cd8-daabeb449fc7/mzaf_15061384202100967601.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/stuck-in-the-middle/1727482937?i=1727482938" data-type="Pre-release single" data-date="2024.02.01" data-colour="#1F5C3A" data-note="A quiet pre-release, two months before the debut, that showed the voices before the volume." data-tracks="[]">
               <span class="r-no mono">08</span>
               <span class="r-title">Stuck In The Middle</span>
               <span class="r-type">Pre-release single</span>
@@ -387,7 +387,7 @@
             </button>
           </li>
           <li class="release" data-i="8" style="--ground:#dfe4ee">
-            <button type="button" aria-pressed="false" data-title="BATTER UP" data-type="Debut digital single" data-date="2023.11.27" data-colour="#dfe4ee" data-note="The debut single. Its music video drew 22.59 million views in its first 24 hours, then a record for a K-pop debut." data-tracks="[]">
+            <button type="button" aria-pressed="false" data-title="BATTER UP" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a5/54/6e/a5546eba-d3d3-7711-3408-0c3bd0405ad7/mzaf_1861301686054980706.plus.aac.p.m4a" data-apple="https://music.apple.com/id/album/batter-up/1717533939?i=1717533942" data-type="Debut digital single" data-date="2023.11.27" data-colour="#dfe4ee" data-note="The debut single. Its music video drew 22.59 million views in its first 24 hours, then a record for a K-pop debut." data-tracks="[]">
               <span class="r-no mono">09</span>
               <span class="r-title">BATTER UP</span>
               <span class="r-type">Debut digital single</span>
@@ -530,8 +530,9 @@
       </div>
       <div>
         <p class="colophon__h">This page</p>
-        <p>An unofficial fan page built as a static site: hand-written HTML, CSS and JavaScript, a Three.js jewel case from a CDN, and self-hosted type. No trackers, no analytics, nothing loaded from a third party except the 3D library.</p>
-        <p>BABYMONSTER, MONSTIEZ and all release titles belong to YG Entertainment. Not affiliated, not endorsed, made with affection and a small amount of nerve.</p>
+        <p>An unofficial fan page built as a static site: hand-written HTML, CSS and JavaScript, a Three.js jewel case from a CDN, and self-hosted type. No trackers, no analytics. The only things loaded from a third party are the 3D library and the music previews.</p>
+        <p>Each release plays the 30-second preview Apple publishes for it, streamed from Apple's CDN and credited to Apple Music. No audio is hosted here, and nothing plays until you press the button.</p>
+        <p>BABYMONSTER, MONSTIEZ, all release titles and all recordings belong to YG Entertainment. Not affiliated, not endorsed, made with affection and a small amount of nerve.</p>
         <p class="mono colophon__note">Rami's page is an empty sleeve on purpose. See <span>images/CREDITS.md</span>.</p>
       </div>
     </div>

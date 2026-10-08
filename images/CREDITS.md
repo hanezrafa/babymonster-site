@@ -116,6 +116,19 @@ artist pages and Wikipedia:
 - <https://ygfamily.com/en/artists/babymonster/discography>
 - <https://en.wikipedia.org/wiki/Babymonster>
 
+## Audio
+
+The disc section does not host any audio. Each of the nine releases plays the
+**30-second preview Apple publishes for that track**, streamed directly from
+Apple's preview CDN (`audio-ssl.itunes.apple.com`). The URL for each release is
+stored in the `data-preview` attribute of its row in `index.html`, and the
+matching `data-apple` attribute links back to the release on Apple Music.
+Nothing plays until the visitor presses the button, and no clip is downloaded,
+cached or re-hosted by this site.
+
+The recordings remain the property of YG Entertainment. Previews are provided by
+Apple for promotional use and are credited to Apple Music in the page footer.
+
 BABYMONSTER, MONSTIEZ and all release titles are the property of YG Entertainment. This
 is an unofficial fan page made for a portfolio exercise, with no affiliation. The
 wallpapers were downloaded from UHD Paper, which in turn sources them from the group's

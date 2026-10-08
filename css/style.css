@@ -727,6 +727,16 @@ html.gl .cover__fallback { display: none; }
 .release-detail .rd-tracks span::after { content: " ·"; color: var(--red); }
 .release-detail .rd-tracks span:last-child::after { content: ""; }
 .release-detail .rd-note { color: var(--paper-3); font-size: .86rem; max-width: 60ch; }
+.release-detail .rd-listen { margin-top: .15rem; }
+.release-detail .rd-listen a {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--paper);
+  border-bottom: 1px solid var(--red); padding-bottom: .12rem;
+  transition: color .2s var(--ease);
+}
+.release-detail .rd-listen a:hover { color: var(--red); }
+.release-detail .rd-listen .i { width: .8rem; height: .8rem; }
 
 .chase {
   grid-column: 1 / -1; height: 2px;

@@ -232,7 +232,6 @@
     if (!list) return;
 
     var rows = $$(".release", list);
-    var spinning = false;
 
     function select(li, quiet) {
       if (!li) return;
@@ -249,6 +248,8 @@
       var date = b.getAttribute("data-date") || "";
       var colour = b.getAttribute("data-colour") || "#e12229";
       var note = b.getAttribute("data-note") || "";
+      var preview = b.getAttribute("data-preview") || "";
+      var apple = b.getAttribute("data-apple") || "";
       var tracks = [];
       try { tracks = JSON.parse(b.getAttribute("data-tracks") || "[]"); } catch (e) { tracks = []; }
 
@@ -258,6 +259,9 @@
       if (window.BMCase && window.BMCase.setLabel) {
         try { window.BMCase.setLabel(colour, title, type.toUpperCase()); } catch (e) {}
       }
+      /* point the player at this release's clip; it only keeps playing if
+         it was already playing, so browsing never starts sound by itself */
+      sound("songLoad", preview);
 
       if (detail) {
         var html = "<h3>" + title + "</h3>" +
@@ -268,6 +272,11 @@
           }).join("") + "</p>";
         }
         if (note) html += '<p class="rd-note">' + note + "</p>";
+        if (apple) {
+          html += '<p class="rd-listen"><a href="' + apple + '" rel="noopener">' +
+            "Hear the whole thing on Apple Music" +
+            '<svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></a></p>';
+        }
         detail.innerHTML = html;
       }
       if (!quiet) sound("tick", 520, 0.06, 55);
@@ -283,16 +292,32 @@
     select(current, true);
 
     if (spinBtn && platter) {
+      var playLabel = $(".btn__label", spinBtn);
+      var playIcon = $("use", spinBtn);
+
+      /* the button owns both the disc animation and the clip, so they can
+         never disagree about whether the record is playing */
+      function reflect(playing) {
+        platter.classList.toggle("is-spinning", playing);
+        spinBtn.setAttribute("aria-pressed", String(playing));
+        if (playLabel) playLabel.textContent = playing ? "Stop the disc" : "Spin the disc";
+        if (playIcon) playIcon.setAttribute("href", playing ? "#i-pause" : "#i-play");
+        if (window.BMCase && window.BMCase.spin) { try { window.BMCase.spin(playing); } catch (e) {} }
+        if (playing) sound("loopStop");   /* the synth tick stands down for the record */
+      }
+
       spinBtn.addEventListener("click", function () {
-        spinning = !spinning;
-        platter.classList.toggle("is-spinning", spinning);
-        spinBtn.setAttribute("aria-pressed", String(spinning));
-        var lbl = $(".btn__label", spinBtn);
-        var use = $("use", spinBtn);
-        if (lbl) lbl.textContent = spinning ? "Stop the disc" : "Spin the disc";
-        if (use) use.setAttribute("href", spinning ? "#i-pause" : "#i-play");
-        if (window.BMCase && window.BMCase.spin) { try { window.BMCase.spin(spinning); } catch (e) {} }
-        if (spinning) sound("loopStart"); else sound("loopStop");
+        var want = !platter.classList.contains("is-spinning");
+        reflect(want);
+        if (want) {
+          /* if the clip is unreachable or the browser refuses to start it,
+             the disc still turns — silent, but the button stays honest */
+          if (!(audio && typeof audio.songPlay === "function" && audio.songPlay())) {
+            sound("loopStart");
+          }
+        } else {
+          sound("songPause");
+        }
       });
     }
   })();
